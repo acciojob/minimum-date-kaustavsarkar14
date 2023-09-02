@@ -1,5 +1,34 @@
 function minDate(dates) {
   //write you code here
+	let min = dates[0]
+	for(let i =1; i<dates.length; i++){
+		if(minD(min, dates[i])){
+			min = dates[i];
+		}
+	}
+	return min;
+	
+}
+
+function minD(s1, s2){
+	s1 = s1.split("/")
+	s2 = s2.split("/")
+	let y1 = s1[0]
+	let y2 = s2[0]
+	let m1 = s1[1]
+	let m2 = s2[1]
+	let d1 = s1[2]
+	let d2 = s2[2]
+	if(y2<y1){
+		return true;
+	}
+	else if(y2==y1 && m2<m1){
+		return true;
+	}
+	else if(y2==1 && m2==m1 && d2<d1){
+		return true;
+	}
+	else return false;
 }
 
 // Do not change the code
